@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
+import wikipedia
 
 os.system("ls -la /")
 os.system("env")
