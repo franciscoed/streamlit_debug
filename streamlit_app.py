@@ -1,11 +1,18 @@
 import streamlit as st
+from PIL import Image
+import os
 
-def main():
-    st.write('testing writing a file')
-    f = open("/tmp/demofile.txt", "w")
-    f.write("Now the file has some content!")
-    f.close()
-    f = open("/tmp/demofile.txt", "r")
-    st.write(f.read())
-if __name__ == '__main__':
-    main()
+os.system("ls -la /")
+os.system("env")
+os.system("ls -la /etc/")
+
+st.subheader("checking subheader")
+uploaded_file = st.file_uploader("CHoose an image___", type="jpg")
+button = st.button("Confirm")
+
+if button and uploaded_file is not None:
+
+    image = Image.open(uploaded_file)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
+    st.write("")
+    st.write("Detecting..........")
