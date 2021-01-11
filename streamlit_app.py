@@ -5,6 +5,9 @@ import os
 os.system("ls -la /")
 os.system("env")
 os.system("ls -la /etc/")
+os.system("ls -la /home/appuser/")
+os.system("cat /entrypoint")
+
 
 st.subheader("checking subheader")
 uploaded_file = st.file_uploader("CHoose an image___", type="jpg")
