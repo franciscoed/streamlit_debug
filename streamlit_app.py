@@ -7,6 +7,8 @@ import subprocess
 os.system("ls -la /")
 os.system("env")
 os.system("cat /etc/os-release")
+os.system("ls -la /home/")
+os.system("whoami")
 os.system("ls -la /home/appuser/")
 os.system("cat /entrypoint")
 os.system("ls -la /app/.supervisord.conf")
