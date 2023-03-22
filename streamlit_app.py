@@ -32,7 +32,7 @@ if not os.path.isdir("/tmp/ta-lib"):
     os.system("ls -la /app/equity/")
     # build
     os.system("./configure --prefix=/home/appuser/venv/")
-        os.system("make")
+    os.system("make")
     # install
     os.system("mkdir -p /home/appuser/venv/")
     os.system("make install")
