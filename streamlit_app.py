@@ -35,6 +35,7 @@ if not os.path.isdir("/tmp/ta-lib"):
     os.system("make")
     # install
     os.system("make install")
+    os.system("ls -la /home/appuser/")
     # back to the cwd
     os.chdir(default_cwd)
     sys.stdout.flush()
