@@ -31,11 +31,12 @@ if not os.path.isdir("/tmp/ta-lib"):
     os.chdir("/tmp/ta-lib")
     os.system("ls -la /app/equity/")
     # build
-    os.system("./configure --prefix=/home/appuser")
-    os.system("make")
+    os.system("./configure --prefix=/home/appuser/venv/")
+        os.system("make")
     # install
+    os.system("mkdir -p /home/appuser/venv/")
     os.system("make install")
-    os.system("ls -la /home/appuser/")
+    os.system("ls -la /home/appuser/venv/")
     # back to the cwd
     os.chdir(default_cwd)
     sys.stdout.flush()
@@ -48,6 +49,6 @@ lib = CDLL("/home/appuser/lib/libta_lib.so.0.0.0")
 try:
     import talib
 except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "--global-option=build_ext", "--global-option=-L/home/appuser/lib/", "--global-option=-I/home/appuser/include/", "ta-lib"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--global-option=build_ext", "--global-option=-L/home/appuser/venv/lib/", "--global-option=-I/home/appuser/venv/include/", "ta-lib"])
 finally:
     import talib
